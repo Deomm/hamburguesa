@@ -9,6 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var paisLabel: UILabel!
+    @IBOutlet weak var hamburguesaLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +24,16 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    var coleccionDePaises = ColeccionDePaises()
+    var coleccionDeHamburguesas = ColeccionDeHamburguesa()
 
+    @IBAction func cambiar(_ sender: Any) {
+        
+        
+        paisLabel.text = coleccionDePaises.obtenPais();
+        hamburguesaLabel.text = coleccionDeHamburguesas.obtenHamburguesa();
+    }
 
 }
 
